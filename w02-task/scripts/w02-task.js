@@ -6,7 +6,7 @@
 
 let fullName = "Noah Carrier";
 let currentYear = "2023";
-let profilePicture = "/w02-task/images/noahCarrier.png";
+let profilePicture = "w02-task/images/noahCarrier.png";
 
 
 
