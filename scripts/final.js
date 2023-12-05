@@ -113,8 +113,33 @@ function computersChoice(){
     result_element.innerHTML = resultText;
  }  
   
- 
+const accessKey = "01-kv9_YzZyxAcLlVqqV3EqOhsqKuGXUoopt1ZBugwU";
+const searchTerm = 'happy';
+const apiUrl = "https://api.unsplash.com/photos/random?query=fight&client_id=01-kv9_YzZyxAcLlVqqV3EqOhsqKuGXUoopt1ZBugwU";
 
- 
 
+
+async function getImage(){
+    const response = await fetch(apiUrl);
+
+    if (response.ok){
+        const data = await response.json();
+        doStuff(data);
+    }
+
+    
+}
  
+function doStuff(data){
+    result = data;
+    const imageUrl = data.urls.regular;
+    const imageDiv = document.createElement('div');
+    imageDiv.id = "imageContainer";
+    const image = document.createElement('img');
+
+    imageDiv.appendChild(image);
+    image.src = imageUrl
+    document.body.appendChild(imageDiv);
+}
+
+ getImage(apiUrl);
